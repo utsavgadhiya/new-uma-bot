@@ -1,6 +1,6 @@
 {
   "name": "new-uma-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a private bot for New Uma Kings Group with Basic Functionalities.",
   "main": "index.js",
   "scripts": {
