@@ -1,7 +1,7 @@
 'use strict'
 
 // import telegraf.js and dotenv
-const { Telegraf } = require('telegraf')
+const { Composer } = require('micro-bot')
 require('dotenv').config()
 
 const helpMessage = 'Hello there, I am New Uma\'s own Butler! Nice to meet you.\
@@ -10,7 +10,7 @@ request some of the feature you want from me in near future. \n\nJust write /fea
 Have a great day ahead!'
 
 // intialize bot instance and fetch the token from env
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Composer(process.env.BOT_TOKEN)
 bot.help((ctx) => ctx.reply(helpMessage))
 bot.start((ctx) => ctx.reply('At the moment this is not supported. Please come back later.'))
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
@@ -23,7 +23,9 @@ bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by c
 bot.hears(new RegExp('/[a-zA-Z0-9!@#$%^&*]'), (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
 use /help for more references.'))
 
-bot.launch()
+// bot.launch()
 // bot.startPolling()
 
 console.log('Successfully running !');
+
+module.exports = bot
