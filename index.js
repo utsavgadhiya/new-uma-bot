@@ -25,3 +25,5 @@ use /help for more references.'))
 
 bot.launch()
 // bot.startPolling()
+
+console.log('Successfully running !');

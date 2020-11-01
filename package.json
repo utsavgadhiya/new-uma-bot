@@ -19,6 +19,6 @@
   "homepage": "https://github.com/utsavgadhiya/new-uma-bot#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "telegraf": "^3.38.0"
+    "micro-bot": "^2.5.3"
   }
 }
