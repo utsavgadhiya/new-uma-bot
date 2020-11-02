@@ -1,6 +1,6 @@
 'use strict'
 
-// import telegraf.js and dotenv
+// import Composer and dotenv
 const { Composer } = require('micro-bot')
 require('dotenv').config()
 
@@ -10,21 +10,15 @@ request some of the feature you want from me in near future. \n\nJust write /fea
 Have a great day ahead!'
 
 // intialize bot instance and fetch the token from env
-const bot = new Composer(process.env.BOT_TOKEN)
+const bot = new Composer()
+console.info('Authenticated!')
 bot.help((ctx) => ctx.reply(helpMessage))
 bot.start((ctx) => ctx.reply('At the moment this is not supported. Please come back later.'))
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by commas.'))
-// bot.command('/congrats', (ctx) => ctx.reply('Congratulations, Taksh Patel for your engagement. But I\'ve heard \
-// that you left the group for no reason. That is not what I\'ve expected from a good friend like you!.'))
-
-// bot.command('hipster', Telegraf.reply('λ'))
-// bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
-bot.hears(new RegExp('/[a-zA-Z0-9!@#$%^&*]'), (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
+bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
+bot.command(new RegExp('/[a-zA-Z0-9!@#$%^&*]'), (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
 use /help for more references.'))
-
-// bot.launch()
-// bot.startPolling()
 
 console.log('Successfully running !');
 
