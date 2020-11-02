@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "micro-bot -e .env -p .env"
+    "start": "micro-bot -e $BOT_TOKEN -p $PORT"
   },
   "repository": {
     "type": "git",
