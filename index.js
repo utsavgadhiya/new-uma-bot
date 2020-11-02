@@ -2,7 +2,6 @@
 
 // import Composer and dotenv
 const { Composer } = require('micro-bot')
-require('dotenv').config()
 
 const helpMessage = 'Hello there, I am New Uma\'s own Butler! Nice to meet you.\
 \n\nAs of now I can\'t do much stuff. But my creator, Utsav is working on it. \nTill than you can \
@@ -11,7 +10,7 @@ Have a great day ahead!'
 
 // intialize bot instance and fetch the token from env
 const bot = new Composer()
-console.info('Authenticated!')
+console.debug('Authenticated!')
 bot.help((ctx) => ctx.reply(helpMessage))
 bot.start((ctx) => ctx.reply('At the moment this is not supported. Please come back later.'))
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
