@@ -11,11 +11,12 @@ Have a great day ahead!'
 // intialize bot instance and fetch the token from env
 const bot = new Composer()
 console.debug('Authenticated!')
+
 bot.help((ctx) => ctx.reply(helpMessage))
 bot.start((ctx) => ctx.reply('At the moment this is not supported. Please come back later.'))
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by commas.'))
-bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
+// bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
 bot.command(new RegExp('/[a-zA-Z0-9!@#$%^&*]'), (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
 use /help for more references.'))
 
