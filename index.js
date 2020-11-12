@@ -8,18 +8,23 @@ const helpMessage = 'Hello there, I am New Uma\'s own Butler! Nice to meet you.\
 request some of the feature you want from me in near future. \n\nJust write /feat and add your requests. \
 Have a great day ahead!'
 
-// intialize bot instance and fetch the token from env
+// intialize bot instance
 const bot = new Composer()
 console.debug('Authenticated!')
 
-bot.help((ctx) => ctx.reply(helpMessage))
-bot.start((ctx) => ctx.reply('At the moment this is not supported. Please come back later.'))
+bot.command('feat', async (ctx) => ctx.reply('Please enter your request seperated by commas.'))
+
+// bot.help((ctx) => ctx.reply(helpMessage))
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
-bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by commas.'))
+// bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by commas.'))
 // bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
-bot.command(new RegExp('/[a-zA-Z0-9!@#$%^&*]'), (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
+bot.command(/m/, (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
 use /help for more references.'))
 
-console.log('Successfully running !');
+bot.start(async ({ from, replyWithMarkdown, botInfo }) =>
+  replyWithMarkdown(`Hi *${from.first_name || from.username}*,
+Welcome, I am *${botInfo.first_name}*. Nice to meet you!`));
+
+console.log('Successfully running!');
 
 module.exports = bot
