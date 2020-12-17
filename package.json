@@ -1,0 +1,23 @@
+{
+  "name": "new-uma-bot",
+  "version": "1.0.1",
+  "description": "This is a private bot for New Uma Kings Group with Basic Functionalities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro-bot index.js -e -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utsavgadhiya/new-uma-bot.git"
+  },
+  "author": "Utsav Gadhiya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/utsavgadhiya/new-uma-bot/issues"
+  },
+  "homepage": "https://github.com/utsavgadhiya/new-uma-bot#readme",
+  "dependencies": {
+    "micro-bot": "^2.5.3"
+  }
+}
