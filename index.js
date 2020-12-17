@@ -1,6 +1,6 @@
 'use strict'
 
-// import Composer and dotenv
+// import Composer
 const { Composer } = require('micro-bot')
 
 const helpMessage = 'Hello there, I am New Uma\'s own Butler! Nice to meet you.\
@@ -13,18 +13,13 @@ const bot = new Composer()
 console.debug('Authenticated!')
 
 bot.command('feat', async (ctx) => ctx.reply('Please enter your request seperated by commas.'))
-
-// bot.help((ctx) => ctx.reply(helpMessage))
-// bot.on('sticker', (ctx) => ctx.reply('👍'))
-// bot.command('feat', (ctx) => ctx.reply('Please enter your request seperated by commas.'))
-// bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
-bot.command(/m/, (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
+bot.help((ctx) => ctx.reply(helpMessage))
+bot.on('sticker', (ctx) => ctx.reply('👍'))
+bot.command('info', ({ replyWithHTML }) => replyWithHTML('<b>What do you wanna know?</b>'))
+bot.command(/^[a-zA-Z0-9]/, (ctx) => ctx.reply('\nHmm... I\'m not sure what you want. \
 use /help for more references.'))
-
 bot.start(async ({ from, replyWithMarkdown, botInfo }) =>
   replyWithMarkdown(`Hi *${from.first_name || from.username}*,
 Welcome, I am *${botInfo.first_name}*. Nice to meet you!`));
-
-console.log('Successfully running!');
 
 module.exports = bot
