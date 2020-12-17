@@ -1,2 +1,2 @@
 # new-uma-bot
-This is a private bot for New Uma Kings Group with Basic Functionalities.
+This is a private bot for Telegram with Basic Functionalities.
